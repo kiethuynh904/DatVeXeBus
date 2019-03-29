@@ -1,14 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-
+import {MyModuleModule} from './my-module/my-module.module';
+import {BaitapNgforModule} from './baitap-ngfor/baitap-ngfor.module';
+import{BaiTapXeBusModule} from './bai-tap-xe-bus/bai-tap-xe-bus.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MyModuleModule,
+    BaitapNgforModule,
+    BaiTapXeBusModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

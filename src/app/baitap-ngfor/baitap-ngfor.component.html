@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Bai Tap Structural directive - CYBERSOFT</h1>
+  <div class="card">
+    <div class="card-header bg-dark text-white">Quản lý danh mục sản phẩm</div>
+    <div class="card-body my-body-card">
+      <div class="form-group ">
+        <input type="text" class="form-control" placeholder="MaSP" #maSP>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="TenSP" #tenSP>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" placeholder="GiaSP" #giaSP>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-success" (click)="LayThongTin(maSP.value,tenSP.value,giaSP.value)">Thêm Sản
+          Phẩm</button>
+      </div>
+    </div>
+  </div>
+  <div class="card item-2">
+    <div class="card-header bg-dark text-white">Danh Mục Sản Phẩm</div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Giá SP</th>
+            <th>Thao Tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of danhSachSanPham | paginate: { itemsPerPage: 3, currentPage: p };let vitri = index">
+            <td>{{item.MaSP}}</td>
+            <td>{{item.TenSP}}</td>
+            <td>{{item.GiaSP}}</td>
+            <td><button type="button"  class="btn btn-danger"
+                (click)="XoaThongTin(item.MaSP)">Xóa</button></td>
+          </tr>
+          <pagination-controls (pageChange)="p = $event" maxSize="5" directionLinks="true" autoHide="true"
+            responsive="true" previousLabel="Previous" nextLabel="Next">
+          </pagination-controls>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
