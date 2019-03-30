@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -7,15 +7,14 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./item-ghe.component.scss']
 })
 export class ItemGheComponent implements OnInit {
-@Input() ghe:any;
-@Output() EventChonGhe = new EventEmitter();
-public gheDangChon:boolean = false;
+  @Input() ghe: any;
+  @Output() EventChonGhe = new EventEmitter();
+  public gheDangChon: boolean = false;
   constructor() { }
-  clickChon(){
+  clickChon() {
     this.gheDangChon = !this.gheDangChon;
     this.EventChonGhe.emit(this.gheDangChon);
   }
   ngOnInit() {
   }
-
 }

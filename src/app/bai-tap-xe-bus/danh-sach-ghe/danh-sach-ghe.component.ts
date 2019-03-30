@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChildren, QueryList, ViewChild, ElementRef } from '@angular/core';
+import * as $ from 'jquery';
+import { ItemGheComponent } from '../item-ghe/item-ghe.component'
 @Component({
   selector: 'app-danh-sach-ghe',
   templateUrl: './danh-sach-ghe.component.html',
   styleUrls: ['./danh-sach-ghe.component.scss']
 })
 export class DanhSachGheComponent implements OnInit {
- public mangGhe: any = [
+  public mangGhe: any = [
+
     { SoGhe: 1, TenGhe: "số 1", Gia: 100, TrangThai: false },
     { SoGhe: 2, TenGhe: "số 2", Gia: 100, TrangThai: false },
     { SoGhe: 3, TenGhe: "số 3", Gia: 100, TrangThai: false },
@@ -44,18 +46,19 @@ export class DanhSachGheComponent implements OnInit {
     { SoGhe: 35, TenGhe: "số 35", Gia: 100, TrangThai: false },
     { SoGhe: 36, TenGhe: "số 36", Gia: 100, TrangThai: true },
   ];
+  @ViewChildren(ItemGheComponent) dsItemGhe: QueryList<ItemGheComponent>;
   public danhSachGheDangChon: any[] = [];
   public status: boolean = false;
   ChonGheParent(GheDangChon: boolean, SoGhe: number) {
     console.log(GheDangChon)
     console.log(SoGhe)
     for (let item of this.mangGhe) {
-      if (GheDangChon === true && SoGhe ==item.SoGhe) {
+      if (GheDangChon === true && SoGhe == item.SoGhe) {
         this.danhSachGheDangChon.push(item);
-        this.status= true;
+        this.status = true;
       }
-      else if(GheDangChon === false && SoGhe == item.SoGhe){
-         this.XoaGhe(SoGhe)
+      else if (GheDangChon === false && SoGhe == item.SoGhe) {
+        this.XoaGhe(SoGhe)
       }
     }
   }
@@ -65,7 +68,16 @@ export class DanhSachGheComponent implements OnInit {
         this.danhSachGheDangChon.splice(i, 1);
       }
   }
-  
+  HuyGhe(soghe: number) {
+    console.log(soghe)
+    this.dsItemGhe.map(appitem => {
+      if (soghe == appitem.ghe.SoGhe) {
+        this.XoaGhe(soghe);
+        appitem.gheDangChon = false;
+      }
+
+    })
+  }
   constructor() { }
 
   ngOnInit() {
