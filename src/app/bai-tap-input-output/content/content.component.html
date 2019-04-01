@@ -1,0 +1,16 @@
+<section id="smartphone" class="container-fluid pt-5 pb-5">
+  <h1 class="text-center">BEST SMARTPHONE</h1>
+  <div class="row">
+    <ng-container *ngFor ="let item of phoneArray">
+      <app-content-item1 [phone] ="item"></app-content-item1>
+    </ng-container>
+  </div>
+</section>
+<section id="laptop" class="container-fluid pt-5 pb-5 bg-light text-dark">
+  <h1 class="text-center">BEST LAPTOP</h1>
+  <div class="row">
+    <ng-container *ngFor="let item of laptopArray">
+      <app-content-item2 [laptop]="item"></app-content-item2>
+    </ng-container>
+  </div>
+</section>
