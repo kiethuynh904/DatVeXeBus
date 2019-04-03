@@ -2,15 +2,36 @@
   <h1 class="text-center">BEST SMARTPHONE</h1>
   <div class="row">
     <ng-container *ngFor ="let item of phoneArray">
-      <app-content-item1 [phone] ="item"></app-content-item1>
+      <app-content-item1 [Item] ="item"></app-content-item1>
     </ng-container>
+    
   </div>
 </section>
 <section id="laptop" class="container-fluid pt-5 pb-5 bg-light text-dark">
   <h1 class="text-center">BEST LAPTOP</h1>
   <div class="row">
     <ng-container *ngFor="let item of laptopArray">
-      <app-content-item2 [laptop]="item"></app-content-item2>
+      <app-content-item1  [Item]="item" (eventChiTiet)='EventChiTietParent($event)'></app-content-item1>
     </ng-container>
   </div>
 </section>
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Chi Tiết</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

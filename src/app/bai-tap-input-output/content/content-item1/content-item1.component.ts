@@ -6,13 +6,18 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./content-item1.component.scss']
 })
 export class ContentItem1Component implements OnInit {
-@Input() phone:any;
-@Output() EventChiTiet = new EventEmitter();
+@Input() Item:any;
+@Output() eventChiTiet = new EventEmitter();
+public content:any;
+public isvalid:boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
-  detail(content) {
-    this.EventChiTiet.emit(content);
+  detail() {
+    console.log(this.isvalid)
+    // this.content = value;
+    // console.log(this.content)
+    this.eventChiTiet.emit(this.isvalid)
   }
 }

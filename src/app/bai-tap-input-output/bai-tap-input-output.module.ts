@@ -6,15 +6,15 @@ import { BaitapCarouselComponent } from './baitap-carousel/baitap-carousel.compo
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentItem1Component } from './content/content-item1/content-item1.component';
-import { ContentItem2Component } from './content/content-item2/content-item2.component';
+
 
 @NgModule({
-  declarations: [BaiTapInputOutputComponent, BaitapHeaderComponent, BaitapCarouselComponent, ContentComponent, FooterComponent, ContentItem1Component, ContentItem2Component],
+  declarations: [BaiTapInputOutputComponent, BaitapHeaderComponent, BaitapCarouselComponent, ContentComponent, FooterComponent, ContentItem1Component, ],
   imports: [
     CommonModule
   ],
   exports:[
-    BaiTapInputOutputComponent, BaitapHeaderComponent, BaitapCarouselComponent, ContentComponent, FooterComponent, ContentItem1Component, ContentItem2Component,
+    BaiTapInputOutputComponent, BaitapHeaderComponent, BaitapCarouselComponent, ContentComponent, FooterComponent, ContentItem1Component,
   ]
 })
 export class BaiTapInputOutputModule { }

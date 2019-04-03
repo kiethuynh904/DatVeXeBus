@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ContentItem1Component} from './content-item1/content-item1.component'
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -18,8 +18,10 @@ export class ContentComponent implements OnInit {
     { name: "Blackberry", content: "BlackBerry is a line of smartphones, tablets, and services originally designed", picture: "/assets/img/sp_blackberry.png" }
   ]
   constructor() { }
-
+  EventChiTietParent(content) {
+    console.log(content);
+  }
   ngOnInit() {
   }
-  
+
 }
