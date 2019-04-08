@@ -17,9 +17,12 @@ export class ContentComponent implements OnInit {
     { name: "Vivo", content: "A young global smartphone brand focusing on introducing perfect sound quality", picture: "/assets/img/sp_vivo850.png" },
     { name: "Blackberry", content: "BlackBerry is a line of smartphones, tablets, and services originally designed", picture: "/assets/img/sp_blackberry.png" }
   ]
+  public content:string = "";
   constructor() { }
-  EventChiTietParent(content) {
-    console.log(content);
+  EventChiTietParent(value) {
+    // console.log(value)
+    this.content = value;
+    // console.log(this.content)
   }
   ngOnInit() {
   }

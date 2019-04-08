@@ -2,7 +2,7 @@
   <h1 class="text-center">BEST SMARTPHONE</h1>
   <div class="row">
     <ng-container *ngFor ="let item of phoneArray">
-      <app-content-item1 [Item] ="item"></app-content-item1>
+      <app-content-item1 [Item]  ="item" (eventChiTiet)='EventChiTietParent($event)'></app-content-item1>
     </ng-container>
     
   </div>
@@ -26,7 +26,7 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          
+          {{content}}
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
